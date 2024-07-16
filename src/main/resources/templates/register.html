@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>단축 URL 생성기</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+<h1>URL을 입력하세요</h1>
+<form action="#" th:action="@{/register}" method="post">
+    <div>
+        <label for="url">Input URL:</label>
+        <input type="text" id="url" name="url" required />
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+<div th:if="${shortenedUrl != null}">
+    <h2>Processed URL:</h2>
+    <a th:href="${shortenedUrl}" th:text="${shortenedUrl}" target="_blank" rel="noopener noreferrer">Processed URL will appear here</a>
+</div>
+</body>
+</html>
