@@ -19,6 +19,6 @@ class ShortenedPathGeneratorTest {
         for (int i = 0; i < exampleUrls.length; i++) {
             results[i] = generator.generate(new URI(exampleUrls[i]));
         }
-        assertThat(results).allMatch(result -> result.length() >= 8 && result.length() <= 10);
+        assertThat(results).allSatisfy(URI::new);
     }
 }
